@@ -2,6 +2,7 @@
 
 ## Constraints
 - **Never make changes in `DNALM-313`.** This directory (symbolic link) should remain untouched.
+- **Never commit**
 
 ## Design Palette
 - **Cinnabar (Main):** `#E34234` (Used for heading numbers and Figure labels)
