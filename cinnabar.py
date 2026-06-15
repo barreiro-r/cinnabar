@@ -118,7 +118,7 @@ def get_image_base64(figures_dir: str, filename: str, debug: bool):
     return f"data:{mime_type};base64,{data}"
 
 @click.command()
-@click.option('--input-file', '-i', required=True, type=click.Path(exists=True), help="Path to the input markdown file.")
+@click.option('--input-file', '-i', required=True, type=click.Path(exists=True), help="Path to the input markdown file. Note: Figures should be placed in a 'figures/' subdirectory relative to this file.")
 @click.option('--output-path', '-o', type=click.Path(), help="Directory to save the rendered HTML.")
 @click.option('--verbose', '-v', is_flag=True, help="Show verbose debugging output.")
 @click.option('--fetch-citations', is_flag=True, help="Fetch citation metadata from Crossref API instead of just showing DOI links.")
