@@ -22,7 +22,7 @@ A specialized Python tool for rendering academic and scientific articles from Ma
 ## 🛠️ Requirements
 
 - Python 3.12+
-- Dependencies: `requests`, `click`, `rich`, `markdown-it-py`, `jinja2`.
+- Dependencies: See `requirements.txt`.
 
 ## 📦 Installation
 
@@ -34,7 +34,7 @@ A specialized Python tool for rendering academic and scientific articles from Ma
    ```
 3. Install the required packages:
    ```bash
-   pip install requests click rich markdown-it-py jinja2
+   pip install -r requirements.txt
    ```
 
 ## 📖 Usage
@@ -46,20 +46,33 @@ python cinnabar.py --input-file="path/to/your/article.md"
 ```
 
 ### Options:
-- `--input-file`, `-i`: (Required) Path to the input markdown file.
+- `--input-file`, `-i`: (Required) Path to the input markdown file. **Note:** All figures referenced in the file must be placed in a `figures/` folder within the same directory as the markdown file.
 - `--output-path`, `-o`: Directory to save the rendered `render.html` (defaults to current directory).
 - `--fetch-citations`: Enable this flag to fetch full metadata from Crossref for DOIs found in the text.
 - `--verbose`, `-v`: Enable detailed debug logging.
 
 ### Example:
 ```bash
-python cinnabar.py --input-file="text.md" --fetch-citations --verbose
+python cinnabar.py --input-file="DNALM-313/PROJECT DNA-LM & PRS.md" --fetch-citations --verbose
 ```
+
+## 🎨 Design Palette
+
+The rendered output follows a specific scientific design guide:
+
+| Element | Color | Use Case |
+| :--- | :--- | :--- |
+| **Cinnabar** | `#E34234` | Header numbers, Figure labels, Active Nav |
+| **Vibrant Teal** | `#008080` | Links, Citations, References |
+| **Deep Brick** | `#A6261B` | Highlighted text color |
+| **Blush Tint** | `#FCEBE9` | Highlighted background |
+| **Text Charcoal**| `#1A1C1C` | Primary body text |
+| **Background** | `#FFFFFF` | Page background |
 
 ## 📝 Markdown Syntax Notes
 
 ### Figures
-Figures are automatically numbered and styled. Cinnabar looks for images in a `figures/` folder located in the same directory as your input Markdown file. 
+Figures are automatically numbered and styled. cinnabar looks for images in a `figures/` folder located in the same directory as your input Markdown file. 
 
 The tool supports a specialized Obsidian-style syntax for scientific figure metadata:
 
@@ -84,7 +97,7 @@ $$E = mc^2 \tag{1.1.1}$$
 
 ## 🔌 Recommended Workflow
 
-For the best experience in Obsidian, this tool works best with the [**obsidian-equation-citator**](https://github.com/FRIEDparrot/obsidian-equation-citator) plugin. It provides a seamless way to manage and cite equations that align perfectly with Cinnabar's referencing logic.
+For the best experience in Obsidian, this tool works best with the [**obsidian-equation-citator**](https://github.com/FRIEDparrot/obsidian-equation-citator) plugin. It provides a seamless way to manage and cite equations that align perfectly with cinnabar's referencing logic.
 
 ---
 *Created by Gemini CLI for scientific publishing workflows.*
